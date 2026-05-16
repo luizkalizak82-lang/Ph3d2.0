@@ -1,263 +1,386 @@
+/* DEFINIÇÃO DE CORES BASEADAS NA SUA LOGO (Bronze, Azul e Grafite Escuro) */
 :root {
-    --bg-dark: #050811;
-    --text-gray: #a0aec0;
-    --bronze-light: #dfba8c;
-    --bronze-mid: #b8860b;
-    --bronze-dark: #8a640f;
+    --bg-main: #04070f;
+    --text-white: #ffffff;
+    --text-muted: #8fa0b5;
+    --bronze-gold: #c39b56;
+    --metallic-blue: #1b609c;
+    --neon-aurora-green: rgba(0, 247, 167, 0.12);
+    --neon-aurora-cyan: rgba(0, 183, 255, 0.1);
+    --live-green: #00ff66;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 html { scroll-behavior: smooth; }
-body { background-color: var(--bg-dark); color: #ffffff; line-height: 1.7; overflow-x: hidden; position: relative; }
+body { background-color: var(--bg-main); color: var(--text-white); line-height: 1.6; overflow-x: hidden; position: relative; }
 
-/* 🌌 EFEITO CURSOR AURORA BOREAL */
-#aurora-cursor {
+/* 🌌 SISTEMA DA AURORA BOREAL NO CURSOR */
+#aurora-glow {
     position: fixed;
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(0,255,150,0.15) 0%, rgba(0,200,255,0.1) 40%, rgba(150,0,255,0.05) 70%, transparent 100%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, var(--neon-aurora-green) 0%, var(--neon-aurora-cyan) 40%, rgba(138, 43, 226, 0.05) 75%, transparent 100%);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    z-index: 9999;
+    z-index: 1;
     mix-blend-mode: screen;
-    filter: blur(10px);
-    transition: transform 0.05s ease-out;
+    filter: blur(20px);
+    transition: transform 0.04s ease-out;
 }
 
-/* Oculta o efeito do cursor em telas touch para não bugar o clique */
 @media (pointer: coarse) {
-    #aurora-cursor { display: none; }
+    #aurora-glow { display: none; }
 }
 
-/* TOPO DO SITE COM LOGO CENTRALIZADA */
-#main-header {
-    width: 100%;
-    padding: 2.5rem 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom, rgba(5, 8, 17, 0.9), transparent);
-    position: absolute;
+/* MENU FIXO SUPERIOR */
+#navbar {
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
-}
-
-/* BRASÃO CIRCULAR EM BRONZE */
-.bronze-crest {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(135deg, var(--bronze-light) 0%, var(--bronze-mid) 50%, var(--bronze-dark) 100%);
-    box-shadow: 0 0 25px rgba(184, 134, 11, 0.3), inset 0 0 15px rgba(138, 100, 15, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.crest-inner-circle {
     width: 100%;
-    height: 100%;
-    background-color: var(--bg-dark);
-    border-radius: 50%;
-    border: 2px solid rgba(223, 186, 140, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 1rem 5%;
+    background: rgba(4, 7, 15, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    z-index: 1000;
 }
 
-.logo-text {
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #fff3e3 0%, var(--bronze-light) 40%, var(--bronze-mid) 70%, var(--bronze-dark) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-left .nav-location {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-logo-img {
+    height: 55px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(195, 155, 86, 0.2));
+}
+
+.btn-nav-contato {
+    text-decoration: none;
+    color: var(--bronze-gold);
+    border: 1px solid var(--bronze-gold);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s;
+}
+
+.btn-nav-contato:hover {
+    background: var(--bronze-gold);
+    color: var(--bg-main);
 }
 
 /* HERO SECTION */
-.hero {
-    min-height: 85vh;
+.hero-section {
+    min-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 150px 1.5rem 40px;
+    background: radial-gradient(circle at center, #0b1426 0%, var(--bg-main) 100%);
     text-align: center;
-    padding: 180px 20px 60px;
-    background: radial-gradient(circle at center, #0d1627 0%, var(--bg-dark) 100%);
+    position: relative;
+    z-index: 2;
 }
 
-.hero-content h1 {
+.hero-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.hero-logo-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.hero-display-logo {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    animation: floatingLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatingLogo {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.gradient-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #ffffff 30%, var(--bronze-gold) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.subtitle {
+.hero-subtitle {
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.1rem;
-    color: var(--text-gray);
-    margin-bottom: 2.5rem;
-    max-width: 600px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
 }
 
-/* BOTÃO DE AÇÃO PREMIUM */
-.cta-button {
+.hero-description {
+    color: #a4b3c6;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+.main-cta-btn {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    border: 2px solid var(--bronze-mid);
+    padding: 1.1rem 2.8rem;
+    border: 2px solid var(--bronze-gold);
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    background: rgba(184, 134, 11, 0.05);
+    background: rgba(195, 155, 86, 0.03);
+    box-shadow: inset 0 0 10px rgba(195, 155, 86, 0.1);
     transition: all 0.3s ease;
 }
 
-.cta-button:hover {
-    background: var(--bronze-mid);
-    color: var(--bg-dark);
-    box-shadow: 0 0 20px rgba(184, 134, 11, 0.4);
+.main-cta-btn:hover {
+    background: var(--bronze-gold);
+    color: var(--bg-main);
+    box-shadow: 0 0 25px rgba(195, 155, 86, 0.4);
+    transform: scale(1.02);
 }
 
-/* SOBRE A EMPRESA */
+/* 🟢 ESTILIZAÇÃO DO BOX DO MONITOR DE PROCESSO */
+.traffic-section {
+    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.traffic-box {
+    background: #09101f;
+    border: 1px solid rgba(195, 155, 86, 0.15);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.live-status-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+/* 🚨 SINALIZADOR QUE ACENDE E APAGA (PULSANTE) */
+.signaling-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--live-green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--live-green);
+    animation: beaconBlink 1.8s infinite ease-in-out;
+}
+
+@keyframes beaconBlink {
+    0% { opacity: 0.2; transform: scale(0.9); box-shadow: 0 0 2px var(--live-green); }
+    50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 14px var(--live-green); }
+    100% { opacity: 0.2; transform: scale(0.9); box-shadow: 0 0 2px var(--live-green); }
+}
+
+.status-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 0.8rem;
+}
+
+#live-counter {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--bronze-gold);
+    line-height: 1;
+}
+
+.pulse-badge {
+    background: rgba(27, 96, 156, 0.15);
+    border: 1px solid var(--metallic-blue);
+    color: #4da3ff;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.traffic-description {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* SEÇÃO SOBRE E HISTÓRIA */
 .about-section {
-    padding: 6rem 1.5rem;
-    background-color: rgba(13, 22, 39, 0.4);
+    padding: 5rem 1.5rem;
+    background: rgba(11, 20, 38, 0.3);
+    position: relative;
+    z-index: 2;
 }
 
-.about-section h2 {
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-tag {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--metallic-blue);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.about-section h2, .services-section h2 {
     font-family: 'Orbitron', sans-serif;
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3rem;
-    color: var(--bronze-light);
 }
 
-.about-story {
-    max-width: 800px;
-    margin: 0 auto;
-    color: var(--text-gray);
+.about-text p {
+    color: var(--text-muted);
     font-size: 1.05rem;
-}
-
-.about-story p {
     margin-bottom: 1.5rem;
     text-align: justify;
 }
 
-/* SERVIÇOS / PRODUTOS */
-.services {
-    padding: 6rem 1.5rem;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.section-title h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.section-title p {
-    color: var(--text-gray);
+/* GRID DE PRODUTOS / SERVIÇOS */
+.services-section {
+    padding: 5rem 1.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .services-grid {
     display: flex;
     gap: 2rem;
-    justify-content: center;
-    max-width: 1100px;
-    margin: 0 auto;
+    margin-top: 2rem;
 }
 
-.card {
-    background: rgba(13, 22, 39, 0.6);
+.service-card {
+    background: rgba(11, 20, 38, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.02);
     padding: 3rem 2rem;
-    border-radius: 8px;
+    border-radius: 6px;
     flex: 1;
     text-align: center;
-    border: 1px solid rgba(223, 186, 140, 0.05);
+    transition: transform 0.3s, border 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(27, 96, 156, 0.3);
 }
 
 .card-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
-.card h3 {
+.service-card h3 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: var(--bronze-light);
+    color: var(--bronze-gold);
 }
 
-.card p {
-    color: var(--text-gray);
-    font-size: 0.95rem;
-}
-
-/* SEÇÃO FINAL WHATSAPP */
-.contact-section {
-    padding: 7rem 1.5rem;
-    text-align: center;
-    background: linear-gradient(to top, rgba(13, 22, 39, 0.5), transparent);
-}
-
-.contact-section h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-section p {
-    color: var(--text-gray);
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.btn-whatsapp-action {
-    display: inline-block;
-    background: #25d366;
-    color: #ffffff;
-    padding: 1.2rem 3.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.05rem;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-whatsapp-action:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 /* RODAPÉ */
 footer {
     padding: 3rem 1.5rem;
     text-align: center;
-    color: #4a5568;
+    color: #435061;
     font-size: 0.85rem;
     border-top: 1px solid rgba(255,255,255,0.02);
 }
 
-/* RESPONSIVIDADE MOBILE */
+/* BOTÃO FLUTUANTE DO WHATSAPP */
+.whatsapp-floating-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+    transition: transform 0.2s;
+}
+
+.whatsapp-floating-btn:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-icon {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+}
+
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .services-grid { flex-direction: column; }
-    .hero-content h1 { font-size: 1.8rem; }
-    .bronze-crest { width: 100px; height: 100px; }
-    .logo-text { font-size: 1.25rem; }
+    .nav-left { display: none; }
+    .gradient-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 0.95rem; }
+    .main-logo-img { height: 45px; }
 }
