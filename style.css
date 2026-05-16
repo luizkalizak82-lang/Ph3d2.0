@@ -45,7 +45,7 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
 }
 
 .main-logo-img {
-    height: 52px;
+    height: 45px;
     width: auto;
     display: block;
 }
@@ -73,7 +73,7 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 140px 1.5rem 40px;
+    padding: 150px 1.5rem 40px;
     background: radial-gradient(circle at center, #0e1529 0%, var(--bg-main) 100%);
     text-align: center;
 }
@@ -83,15 +83,20 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     width: 100%;
 }
 
-.gradient-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3.2rem;
-    font-weight: 900;
-    letter-spacing: 4px;
+/* ESTILIZAÇÃO DO BRASÃO PRINCIPAL */
+.hero-logo-container {
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #ffffff 50%, var(--bronze-metallic) 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-main-logo {
+    width: 100%;
+    max-width: 320px; /* Tamanho ideal do brasão no meio da tela */
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.6));
 }
 
 .hero-description {
@@ -285,6 +290,5 @@ footer {
 @media (max-width: 768px) {
     .services-grid { flex-direction: column; }
     .nav-left { display: none; }
-    .gradient-title { font-size: 2.5rem; }
-    .main-logo-img { height: 42px; }
+    .hero-main-logo { max-width: 240px; } /* Ajuste de tamanho para celular */
 }
