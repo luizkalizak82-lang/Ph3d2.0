@@ -83,7 +83,6 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     width: 100%;
 }
 
-/* ESTILIZAÇÃO DO BRASÃO PRINCIPAL */
 .hero-logo-container {
     margin-bottom: 1.5rem;
     display: flex;
@@ -93,7 +92,7 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
 
 .hero-main-logo {
     width: 100%;
-    max-width: 320px; /* Tamanho ideal do brasão no meio da tela */
+    max-width: 320px;
     height: auto;
     display: block;
     filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.6));
@@ -290,5 +289,6 @@ footer {
 @media (max-width: 768px) {
     .services-grid { flex-direction: column; }
     .nav-left { display: none; }
-    .hero-main-logo { max-width: 240px; } /* Ajuste de tamanho para celular */
+    .hero-main-logo { max-width: 240px; }
+    .main-logo-img { height: 42px; }
 }
