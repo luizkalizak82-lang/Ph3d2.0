@@ -6,6 +6,28 @@
     <title>PH3D | Impressão 3D & Soluções Digitais</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- INÍCIO DA ADIÇÃO: Código para deixar a imagem redonda -->
+    <style>
+        /* Isso deixa a logo do topo redondinha */
+        .main-logo-img {
+            width: 50px !important;      /* Ajuste o tamanho se precisar */
+            height: 50px !important;     /* Altura igual à largura para ser quadrada */
+            border-radius: 50% !important; /* Deixa REDONDA */
+            object-fit: cover !important;  /* Não deixa distorcer */
+        }
+
+        /* Isso deixa a logo grande do meio (Hero) redondinha */
+        .hero-main-logo {
+            width: 180px !important;     /* Ajuste o tamanho se precisar */
+            height: 180px !important;    /* Altura igual à largura para ser quadrada */
+            border-radius: 50% !important; /* Deixa REDONDA */
+            object-fit: cover !important;  /* Não deixa distorcer */
+            border: 3px solid #00dbde;   /* Adiciona uma borda tecnológica iluminada */
+            box-shadow: 0 0 15px rgba(0, 219, 222, 0.5); /* Efeito neon de leve */
+        }
+    </style>
+    <!-- FIM DA ADIÇÃO -->
 </head>
 <body>
 
@@ -53,7 +75,7 @@
                 <div class="pulse-badge">Conversando Agora</div>
             </div>
             <p class="traffic-description">
-                Fila atual de solicitações e orçamentos ativos neste instante.
+                Fila atual de solicitações e orçamentos activos neste instante.
             </p>
         </div>
     </section>
