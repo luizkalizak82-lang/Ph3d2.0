@@ -1,31 +1,31 @@
-/* DEFINIÇÃO DE CORES BASEADAS NA SUA LOGO (Bronze, Azul e Grafite Escuro) */
+/* PALETA TÉCNICA (Metais Escuros, Bronze Acetinado e Grafite) */
 :root {
-    --bg-main: #04070f;
+    --bg-main: #060913;
     --text-white: #ffffff;
-    --text-muted: #8fa0b5;
-    --bronze-gold: #c39b56;
-    --metallic-blue: #1b609c;
-    --neon-aurora-green: rgba(0, 247, 167, 0.12);
-    --neon-aurora-cyan: rgba(0, 183, 255, 0.1);
-    --live-green: #00ff66;
+    --text-muted: #869ab8;
+    --bronze-metallic: #b5935b;
+    --steel-blue: #1c426e;
+    --aurora-green: rgba(0, 255, 149, 0.14);
+    --aurora-cyan: rgba(0, 195, 255, 0.12);
+    --live-led: #00ff66;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 html { scroll-behavior: smooth; }
 body { background-color: var(--bg-main); color: var(--text-white); line-height: 1.6; overflow-x: hidden; position: relative; }
 
-/* 🌌 SISTEMA DA AURORA BOREAL NO CURSOR */
+/* 🌌 RASTRO DA AURORA BOREAL NO CURSOR */
 #aurora-glow {
     position: fixed;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, var(--neon-aurora-green) 0%, var(--neon-aurora-cyan) 40%, rgba(138, 43, 226, 0.05) 75%, transparent 100%);
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, var(--aurora-green) 0%, var(--aurora-cyan) 45%, rgba(147, 51, 234, 0.06) 80%, transparent 100%);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
     z-index: 1;
     mix-blend-mode: screen;
-    filter: blur(20px);
+    filter: blur(25px);
     transition: transform 0.04s ease-out;
 }
 
@@ -33,16 +33,16 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     #aurora-glow { display: none; }
 }
 
-/* MENU FIXO SUPERIOR */
+/* NAVBAR FIXO */
 #navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 5%;
-    background: rgba(4, 7, 15, 0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 0.9rem 5%;
+    background: rgba(6, 9, 19, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
     z-index: 1000;
 }
 
@@ -67,27 +67,28 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
 }
 
 .main-logo-img {
-    height: 55px;
+    height: 58px;
     width: auto;
     display: block;
-    filter: drop-shadow(0 0 8px rgba(195, 155, 86, 0.2));
+    filter: drop-shadow(0 2px 10px rgba(181, 147, 91, 0.15));
 }
 
 .btn-nav-contato {
     text-decoration: none;
-    color: var(--bronze-gold);
-    border: 1px solid var(--bronze-gold);
-    padding: 0.5rem 1.2rem;
+    color: var(--bronze-metallic);
+    border: 1px solid var(--bronze-metallic);
+    padding: 0.5rem 1.3rem;
     border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 600;
     font-family: 'Orbitron', sans-serif;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn-nav-contato:hover {
-    background: var(--bronze-gold);
+    background: var(--bronze-metallic);
     color: var(--bg-main);
+    box-shadow: 0 0 15px rgba(181, 147, 91, 0.3);
 }
 
 /* HERO SECTION */
@@ -96,8 +97,8 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 150px 1.5rem 40px;
-    background: radial-gradient(circle at center, #0b1426 0%, var(--bg-main) 100%);
+    padding: 160px 1.5rem 40px;
+    background: radial-gradient(circle at center, #0e1529 0%, var(--bg-main) 100%);
     text-align: center;
     position: relative;
     z-index: 2;
@@ -109,52 +110,54 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
 }
 
 .hero-logo-wrapper {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .hero-display-logo {
     width: 100%;
-    max-width: 280px;
+    max-width: 290px;
     height: auto;
     animation: floatingLogo 4s ease-in-out infinite;
+    filter: drop-shadow(0 5px 20px rgba(0,0,0,0.6));
 }
 
 @keyframes floatingLogo {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-12px); }
     100% { transform: translateY(0px); }
 }
 
 .gradient-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 900;
-    letter-spacing: 4px;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #ffffff 30%, var(--bronze-gold) 70%);
+    letter-spacing: 5px;
+    margin-bottom: 0.6rem;
+    background: linear-gradient(135deg, #ffffff 40%, var(--bronze-metallic) 85%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
 }
 
 .hero-description {
-    color: #a4b3c6;
+    color: #9bb0c7;
     font-size: 1rem;
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto 2.5rem;
 }
 
+/* BOTÃO DE AÇÃO PRINCIPAL */
 .main-cta-btn {
     display: inline-block;
-    padding: 1.1rem 2.8rem;
-    border: 2px solid var(--bronze-gold);
+    padding: 1.15rem 3rem;
+    border: 2px solid var(--bronze-metallic);
     color: #ffffff;
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
@@ -162,19 +165,19 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     font-size: 0.95rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    background: rgba(195, 155, 86, 0.03);
-    box-shadow: inset 0 0 10px rgba(195, 155, 86, 0.1);
+    background: rgba(181, 147, 91, 0.02);
+    box-shadow: inset 0 0 12px rgba(181, 147, 91, 0.08);
     transition: all 0.3s ease;
 }
 
 .main-cta-btn:hover {
-    background: var(--bronze-gold);
+    background: var(--bronze-metallic);
     color: var(--bg-main);
-    box-shadow: 0 0 25px rgba(195, 155, 86, 0.4);
-    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(181, 147, 91, 0.45);
+    transform: translateY(-2px);
 }
 
-/* 🟢 ESTILIZAÇÃO DO BOX DO MONITOR DE PROCESSO */
+/* SEÇÃO DO MONITOR DE TRAFEGO */
 .traffic-section {
     padding: 2rem 1.5rem;
     display: flex;
@@ -184,14 +187,14 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
 }
 
 .traffic-box {
-    background: #09101f;
-    border: 1px solid rgba(195, 155, 86, 0.15);
-    padding: 2rem;
+    background: #090f1e;
+    border: 1px solid rgba(181, 147, 91, 0.18);
+    padding: 2.2rem;
     border-radius: 8px;
     text-align: center;
     max-width: 550px;
     width: 100%;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
 }
 
 .live-status-header {
@@ -199,23 +202,23 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
-/* 🚨 SINALIZADOR QUE ACENDE E APAGA (PULSANTE) */
+/* LED SINALIZADOR PISCANTE */
 .signaling-dot {
-    width: 10px;
-    height: 10px;
-    background-color: var(--live-green);
+    width: 9px;
+    height: 9px;
+    background-color: var(--live-led);
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--live-green);
-    animation: beaconBlink 1.8s infinite ease-in-out;
+    box-shadow: 0 0 10px var(--live-led);
+    animation: beaconPulse 2s infinite ease-in-out;
 }
 
-@keyframes beaconBlink {
-    0% { opacity: 0.2; transform: scale(0.9); box-shadow: 0 0 2px var(--live-green); }
-    50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 14px var(--live-green); }
-    100% { opacity: 0.2; transform: scale(0.9); box-shadow: 0 0 2px var(--live-green); }
+@keyframes beaconPulse {
+    0% { opacity: 0.2; transform: scale(0.9); box-shadow: 0 0 2px var(--live-led); }
+    50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 15px var(--live-led); }
+    100% { opacity: 0.2; transform: scale(0.9); box-shadow: 0 0 2px var(--live-led); }
 }
 
 .status-text {
@@ -236,16 +239,16 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
 
 #live-counter {
     font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 900;
-    color: var(--bronze-gold);
+    color: var(--bronze-metallic);
     line-height: 1;
 }
 
 .pulse-badge {
-    background: rgba(27, 96, 156, 0.15);
-    border: 1px solid var(--metallic-blue);
-    color: #4da3ff;
+    background: rgba(28, 66, 110, 0.2);
+    border: 1px solid var(--steel-blue);
+    color: #5ea6f5;
     padding: 0.3rem 0.8rem;
     font-size: 0.75rem;
     font-family: 'Orbitron', sans-serif;
@@ -258,10 +261,10 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     font-size: 0.85rem;
 }
 
-/* SEÇÃO SOBRE E HISTÓRIA */
+/* SOBRE NÓS */
 .about-section {
-    padding: 5rem 1.5rem;
-    background: rgba(11, 20, 38, 0.3);
+    padding: 6rem 1.5rem;
+    background: rgba(14, 21, 41, 0.4);
     position: relative;
     z-index: 2;
 }
@@ -273,18 +276,18 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
 
 .section-tag {
     font-family: 'Orbitron', sans-serif;
-    color: var(--metallic-blue);
+    color: var(--steel-blue);
     font-size: 0.8rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     text-align: center;
 }
 
 .about-section h2, .services-section h2 {
     font-family: 'Orbitron', sans-serif;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.1rem;
     margin-bottom: 3rem;
 }
 
@@ -295,9 +298,9 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     text-align: justify;
 }
 
-/* GRID DE PRODUTOS / SERVIÇOS */
+/* SERVIÇOS */
 .services-section {
-    padding: 5rem 1.5rem;
+    padding: 6rem 1.5rem;
     position: relative;
     z-index: 2;
 }
@@ -309,8 +312,8 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
 }
 
 .service-card {
-    background: rgba(11, 20, 38, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.02);
+    background: rgba(14, 21, 41, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.01);
     padding: 3rem 2rem;
     border-radius: 6px;
     flex: 1;
@@ -319,8 +322,8 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(27, 96, 156, 0.3);
+    transform: translateY(-6px);
+    border-color: rgba(181, 147, 91, 0.25);
 }
 
 .card-icon {
@@ -332,7 +335,7 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     font-family: 'Orbitron', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: var(--bronze-gold);
+    color: var(--bronze-metallic);
 }
 
 .service-card p {
@@ -340,16 +343,16 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     font-size: 0.9rem;
 }
 
-/* RODAPÉ */
+/* FOOTER */
 footer {
-    padding: 3rem 1.5rem;
+    padding: 3.5rem 1.5rem;
     text-align: center;
-    color: #435061;
+    color: #4b5a70;
     font-size: 0.85rem;
-    border-top: 1px solid rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(255,255,255,0.01);
 }
 
-/* BOTÃO FLUTUANTE DO WHATSAPP */
+/* WHATSAPP FLUTUANTE */
 .whatsapp-floating-btn {
     position: fixed;
     bottom: 25px;
@@ -361,9 +364,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     z-index: 2000;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease;
 }
 
 .whatsapp-floating-btn:hover {
@@ -376,11 +379,11 @@ footer {
     fill: #ffffff;
 }
 
-/* RESPONSIVIDADE */
+/* ADAPTAÇÕES MOBILE */
 @media (max-width: 768px) {
     .services-grid { flex-direction: column; }
     .nav-left { display: none; }
-    .gradient-title { font-size: 2.2rem; }
+    .gradient-title { font-size: 2.4rem; }
     .hero-subtitle { font-size: 0.95rem; }
-    .main-logo-img { height: 45px; }
+    .main-logo-img { height: 48px; }
 }
