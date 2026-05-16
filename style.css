@@ -44,9 +44,12 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     transform: translateX(-50%);
 }
 
+/* LOGO DO NAV - ATUALIZADA PARA FICAR REDONDA */
 .main-logo-img {
     height: 45px;
-    width: auto;
+    width: 45px;          /* Altura e largura iguais criam o quadrado perfeito */
+    border-radius: 50%;   /* Corta os cantos deixando redondo */
+    object-fit: cover;    /* Evita que a imagem mude de proporção ou distorça */
     display: block;
 }
 
@@ -90,11 +93,14 @@ body { background-color: var(--bg-main); color: var(--text-white); line-height: 
     align-items: center;
 }
 
+/* LOGO PRINCIPAL HERO - ATUALIZADA PARA FICAR REDONDA */
 .hero-main-logo {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
+    width: 180px;         /* Definiu tamanho fixo para não distorcer */
+    height: 180px;        /* Altura idêntica à largura */
+    border-radius: 50%;   /* Deixa redonda */
+    object-fit: cover;    /* Garante o enquadramento perfeito da logo */
     display: block;
+    border: 3px solid var(--bronze-metallic); /* Borda elegante com a cor do seu site */
     filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.6));
 }
 
@@ -286,9 +292,18 @@ footer {
 
 .whatsapp-icon { width: 28px; height: 28px; fill: #ffffff; }
 
+/* AJUSTES DE RESPONSIVIDADE (CELULAR) */
 @media (max-width: 768px) {
     .services-grid { flex-direction: column; }
     .nav-left { display: none; }
-    .hero-main-logo { max-width: 240px; }
-    .main-logo-img { height: 42px; }
+    
+    /* Mantém as proporções perfeitas mesmo no celular */
+    .hero-main-logo { 
+        max-width: 150px; 
+        height: 150px; 
+    }
+    .main-logo-img { 
+        height: 42px; 
+        width: 42px; 
+    }
 }
